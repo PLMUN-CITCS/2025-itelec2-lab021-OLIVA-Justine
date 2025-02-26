@@ -1,30 +1,36 @@
 """
-factorial_calculator_factions.py
+factorial_calculator_functions.py
 
-This part tell if the user input is even or odd
-It consists two functions:
-1. get_non_ integer() - Handle user input and validation.
-2. calculate_factorial(n) - check if the number is even or odd.
+This program calculates the factorial of a given non-negative integer.
+It consists of two functions:
+1. get_non_negative_integer() - Handles user input and validation.
+2. calculate_factorial(n) - Computes the factorial of the given number.
 """
+
 def get_non_negative_integer() -> int:
     """
-    Prompt the user to enter a valid integer.
+    Prompt the user to enter a valid non-negative integer.
 
     Returns:
-        int: The validated integer input by the user.
+        int: The validated non-negative integer input by the user.
     """
-    while True:  # Fixed syntax error (true -> True)
+    while True:
         try:
-            number = int(input("Enter a non-negative integer: ")) # User input
-            return number # Return the validated integer
+            number = int(input("Enter a non-negative integer: "))  # User input
+            if number < 0:
+                print("Error: Please enter a non-negative integer.")  # Check negative input
+            else:
+                return number  # Return the validated integer
         except ValueError:
-            print("Error: Invalid input. Please enter a valid integer.") # check non-integer input
+            print("Error: Invalid input. Please enter a valid integer.")  # Check non-integer input
 
-def calculate_factorial(n):
+def calculate_factorial(n: int) -> int:
     """
     Calculates the factorial of a given non-negative integer.
+    
     Args:
         n (int): Non-negative integer.
+    
     Returns:
         int: Factorial of n.
     """
@@ -33,11 +39,10 @@ def calculate_factorial(n):
     factorial = 1
     for i in range(1, n + 1):
         factorial *= i
-    return factorial # return the calculated factorial
-
+    return factorial  # Return the calculated factorial
 
 if __name__ == "__main__":
-	# Main Program Flow
+    # Main Program Flow
     number = get_non_negative_integer()
-    result = calculate_factorial(number) # Check the result status
-    print(f"The factorial of {number} is: {result}") # Display the result
+    result = calculate_factorial(number)  # Compute factorial
+    print(f"The factorial of {number} is: {result}")  # Display the result
