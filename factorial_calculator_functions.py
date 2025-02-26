@@ -16,11 +16,11 @@ def get_non_negative_integer() -> int:
     """
     while True:
         try:
-            number = int(input("Enter a non-negative integer: "))  # User input
-            if number < 0:
+            num = int(input("Enter a non-negative integer: "))  # User input
+            if num < 0:
                 print("Error: Please enter a non-negative integer.")  # Check negative input
             else:
-                return number  # Return the validated integer
+                return num  # Return the validated integer
         except ValueError:
             print("Error: Invalid input. Please enter a valid integer.")  # Check non-integer input
 
