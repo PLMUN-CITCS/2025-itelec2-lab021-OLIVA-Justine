@@ -1,3 +1,11 @@
+"""
+factorial_calculator_factions.py
+
+This part tell if the user input is even or odd
+It consists two functions:
+1. get_non_ integer() - Handle user input and validation.
+2. calculate_factorial(n) - check if the number is even or odd.
+"""
 def get_non_negative_integer() -> int:
     """
     Prompt the user to enter a valid integer.
@@ -7,10 +15,10 @@ def get_non_negative_integer() -> int:
     """
     while True:  # Fixed syntax error (true -> True)
         try:
-            number = int(input("Enter a non-negative integer: "))
-            return number
+            number = int(input("Enter a non-negative integer: ")) # User input
+            return number # Return the validated integer
         except ValueError:
-            print("Error: Invalid input. Please enter a valid integer.")
+            print("Error: Invalid input. Please enter a valid integer.") # check non-integer input
 
 def calculate_factorial(n):
     """
@@ -21,14 +29,15 @@ def calculate_factorial(n):
         int: Factorial of n.
     """
     if n == 0:
-        return 1
+        return 1 
     factorial = 1
     for i in range(1, n + 1):
         factorial *= i
-    return factorial
+    return factorial # return the calculated factorial
 
-# Main Program Flow
+
 if __name__ == "__main__":
+	# Main Program Flow
     number = get_non_negative_integer()
-    result = calculate_factorial(number)
-    print(f"The factorial of {number} is: {result}")
+    result = calculate_factorial(number) # Check the result status
+    print(f"The factorial of {number} is: {result}") # Display the result
