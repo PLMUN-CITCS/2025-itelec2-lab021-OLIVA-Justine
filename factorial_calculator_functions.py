@@ -5,6 +5,11 @@ This program calculates the factorial of a given non-negative integer.
 It consists of two functions:
 1. get_non_negative_integer() - Handles user input and validation.
 2. calculate_factorial(n) - Computes the factorial of the given number.
+
+Notable Observations:
+- **Function Decomposition:** The program is divided into two functions: `get_non_negative_integer` for input handling and `calculate_factorial` for the factorial calculation. This promotes modularity and code organization.
+- **Iterative Calculation:** The `calculate_factorial` function uses a loop to iteratively multiply numbers, which is the core logic of calculating a factorial.
+- **Base Case:** The factorial function handles the base case of `0!` (factorial of 0) by returning 1.
 """
 
 def get_non_negative_integer() -> int:
